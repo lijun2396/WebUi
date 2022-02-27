@@ -12,7 +12,7 @@ import util.PropertiesReader;
 import java.io.File;
 import java.util.ResourceBundle;
 
-public class test {
+public class test extends BaseTest{
     private static Logger log = Logger.getLogger(test.class);
     @BeforeClass
     public void  before(){
@@ -52,5 +52,13 @@ public class test {
         dr.findElement(By.id("su")).submit();
         Thread.sleep(3000);
         dr.quit();
+    }
+    @Test
+    public void fun3() throws InterruptedException {
+        driver.get("https://www.baidu.com");
+        driver.manage().window().maximize();
+        driver.findElement(By.id("su")).submit();
+        Thread.sleep(3000);
+
     }
 }
