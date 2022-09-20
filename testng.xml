@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="登录阿里">
+        <classes>
+            <class name="testcase.AliTest">
+            </class>
+        </classes>
+    </test>
+    <listeners>
+        <!--含有失败截图的监听器-->
+        <listener class-name="listener.TestLogListener"/>
+    </listeners>
+
+</suite>
