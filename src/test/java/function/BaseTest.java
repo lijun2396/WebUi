@@ -2,8 +2,10 @@ package function;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
+import util.ExcelUtils;
 
 import java.io.IOException;
+import java.util.Map;
 
 public class BaseTest {
 //git@github.com:abcnull/webuitest4j.git
@@ -38,6 +40,7 @@ public class BaseTest {
 
         // todo : 由于线程隔离设为 test，这里可以通过 new 一个对象来达到线程隔离的效果，可以做其他的扩展定制（看需要）
         // todo : 登录操作可以放在这里（看需要）
+
     }
     /**
      * 执行一个测试用例中的类方法之前执行

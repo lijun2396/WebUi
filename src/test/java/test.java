@@ -7,21 +7,23 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import util.ExcelUtils;
 import util.PropertiesReader;
 
 import java.io.File;
+import java.util.Map;
 import java.util.ResourceBundle;
 
 public class test extends BaseTest{
     private static Logger log = Logger.getLogger(test.class);
-    @BeforeClass
+/*    @BeforeClass
     public void  before(){
         ChromeOptions chromeOptions = new ChromeOptions();
 //        chromeOptions.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
         chromeOptions.addArguments("disable-infobars");
         // --no-sandbox
 //        chromeOptions.addArguments("--no-sandbox");
-    }
+    }*/
     @Test
     public void fun1() throws InterruptedException {
         log.info("启动chrome");
@@ -60,5 +62,11 @@ public class test extends BaseTest{
         driver.findElement(By.id("su")).submit();
         Thread.sleep(3000);
 
+    }
+    @Test
+    public void fun4(){
+        Map<String,String[]> map=ExcelUtils.xlsGetLoginInfo();
+        System.out.println(map.get("网易")[0]);
+        System.out.println(map.get("网易")[1]);
     }
 }

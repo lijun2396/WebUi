@@ -1,12 +1,13 @@
 package function;
 
+import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import util.PropertiesReader;
 
 import java.io.File;
-
+@Slf4j
 public class BaseDriver {
     /**
      *浏览器驱动
@@ -29,7 +30,11 @@ public class BaseDriver {
         // --chrome正受到自动测试软件的控制
         chromeOptions.addArguments("disable-infobars");
         chromeOptions.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
+        this.driver=new ChromeDriver(chromeOptions);
+        //窗口最大化
+        driver.manage().window().maximize();
+        log.info("");
         /* 启动 WebDriver */
-        return new ChromeDriver(chromeOptions);
+        return driver;
     }
 }
